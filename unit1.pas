@@ -15,14 +15,10 @@ type
     diff1: TRadioButton;
     diff2: TRadioButton;
     diff3: TRadioButton;
-    Label1: TLabel;
     ResetButton: TButton;
     confirm: TButton;
     guessField: TEdit;
     result: TLabel;
-    procedure d1Change(Sender: TObject);
-    procedure d2Change(Sender: TObject);
-    procedure d3Change(Sender: TObject);
     procedure diff1Change(Sender: TObject);
     procedure confirmClick(Sender: TObject);
     procedure diff3Change(Sender: TObject);
@@ -47,22 +43,6 @@ var
 
 implementation
 
-{function NumGenerator(difficulty: Integer) :Integer;
-begin
-  if difficulty=1 then
-     randomize;
-     randNum:=random(9);
-     Inc(randNum);
-  if difficulty=2 then
-     randomize;
-     randNum:=random(99);
-     Inc(randNum);
-  if difficulty=3 then
-     randomize;
-     randNum:=random(999);
-     Inc(randNum);
-end;
-}
 
 
 {$R *.lfm}
@@ -82,17 +62,27 @@ end;
 procedure TForm1.ResetButtonClick(Sender: TObject);
 begin
   if difficulty=1 then
-     randomize;
-     randNum:=random(9);
-     Inc(randNum);
+     begin
+       randomize;
+       randNum:=random(10);
+       Inc(randNum);
+
+     end;
   if difficulty=2 then
-     randomize;
-     randNum:=random(99);
-     Inc(randNum);
+     begin
+       randomize;
+       randNum:=random(100);
+       Inc(randNum);
+
+     end;
   if difficulty=3 then
-     randomize;
-     randNum:=random(999);
-     Inc(randNum);
+     begin
+       randomize;
+       randNum:=random(1000);
+       Inc(randNum);
+
+     end;
+
 end;
 
 procedure TForm1.resultClick(Sender: TObject);
@@ -110,9 +100,9 @@ begin
  if input=randNum then
     result.Caption:=('Richtig geraten!');
  if input<randNum then
-    result.Caption:=('Die Nummer ist größer als die Eingabe!');
+    result.Caption:=('Eingabe ist zu klein!');
  if input>randNum then
-    result.Caption:=('Die Nummer ist kleiner als die Eingabe!');
+    result.Caption:=('Eingabe ist zu groß!');
 
 end;
 

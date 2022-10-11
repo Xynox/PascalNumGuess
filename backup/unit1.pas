@@ -19,9 +19,6 @@ type
     confirm: TButton;
     guessField: TEdit;
     result: TLabel;
-    procedure d1Change(Sender: TObject);
-    procedure d2Change(Sender: TObject);
-    procedure d3Change(Sender: TObject);
     procedure diff1Change(Sender: TObject);
     procedure confirmClick(Sender: TObject);
     procedure diff3Change(Sender: TObject);
@@ -81,17 +78,27 @@ end;
 procedure TForm1.ResetButtonClick(Sender: TObject);
 begin
   if difficulty=1 then
-     randomize;
-     randNum:=random(9);
-     Inc(randNum);
+     begin
+       randomize;
+       randNum:=random(10);
+       Inc(randNum);
+
+     end;
   if difficulty=2 then
-     randomize;
-     randNum:=random(99);
-     Inc(randNum);
+     begin
+       randomize;
+       randNum:=random(100);
+       Inc(randNum);
+
+     end;
   if difficulty=3 then
-     randomize;
-     randNum:=random(999);
-     Inc(randNum);
+     begin
+       randomize;
+       randNum:=random(1000);
+       Inc(randNum);
+
+     end;
+
 end;
 
 procedure TForm1.resultClick(Sender: TObject);

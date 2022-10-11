@@ -1,13 +1,13 @@
 object Form1: TForm1
-  Left = 998
+  Left = 1195
   Height = 387
-  Top = 230
+  Top = 205
   Width = 408
-  Caption = 'Form1'
+  Caption = 'Nummer raten'
   ClientHeight = 387
   ClientWidth = 408
   OnCreate = FormCreate
-  LCLVersion = '2.0.10.0'
+  LCLVersion = '2.2.4.0'
   object guessField: TEdit
     Left = 128
     Height = 23
@@ -50,6 +50,7 @@ object Form1: TForm1
     Top = 24
     Width = 52
     Caption = 'Leicht'
+    OnChange = diff1Change
     TabOrder = 3
   end
   object diff2: TRadioButton
@@ -69,13 +70,5 @@ object Form1: TForm1
     Caption = 'Schwer'
     OnChange = diff3Change
     TabOrder = 5
-  end
-  object Label1: TLabel
-    Left = 202
-    Height = 15
-    Top = 303
-    Width = 34
-    Caption = 'Label1'
-    ParentColor = False
   end
 end
